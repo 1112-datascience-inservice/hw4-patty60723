@@ -11,9 +11,7 @@ pca <- prcomp(log_feature, center = TRUE, scale. = TRUE)
 # print(pca)
 
 server <- function(input, output) {
-    # output$hist <- renderPlot({
-    #     hist(rnorm(input$n))
-    # })
+    output$test_here_output <- renderText({ input$test_here })
 }
 
 # library(shiny)

@@ -46,11 +46,15 @@ ui <- fluidPage(
                 ),
                 div(
                     class = "st-scroll",
-                    HTML('<section class="st-panel" id="st-panel-1">
+                    list(HTML(
+                    '<section class="st-panel" id="st-panel-1">
                         <div class="st-deco" data-icon="&#xf069;"></div>
                         <h2>OVERVIEW</h2>
-                        <p></p>
-                    </section>')
+                        <p><input type="text" name="test_here" id="test_here"></p>
+                    '), tags$div(htmlOutput("test_here_output")),
+                    HTML('
+                    </section>'
+                    ))
                 ),
                 div(
                     class = "st-scroll",
