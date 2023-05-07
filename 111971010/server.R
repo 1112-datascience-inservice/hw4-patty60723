@@ -1,3 +1,5 @@
+library("FactoMineR")
+library("factoextra")
 library(shiny)
 library(ggvis)
 
@@ -11,7 +13,9 @@ pca <- prcomp(log_feature, center = TRUE, scale. = TRUE)
 # print(pca)
 
 server <- function(input, output) {
-    output$test_here_output <- renderText({ input$test_here })
+    output$test_here_output <- renderText({
+        input$test_here
+    })
 }
 
 # library(shiny)

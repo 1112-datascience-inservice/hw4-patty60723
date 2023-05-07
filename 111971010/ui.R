@@ -36,31 +36,35 @@ ui <- fluidPage(
                 HTML(
                     '<input type="radio" name="radio-set"
             checked="checked" id="st-control-1"/>
-    <a href="#st-panel-1">OVERVIEW</a>
+    <a href="#st-panel-1">Iris Data</a>
     <input type="radio" name="radio-set" id="st-control-2"/>
-    <a href="#st-panel-2">Result</a>
+    <a href="#st-panel-2">Statics</a>
     <input type="radio" name="radio-set" id="st-control-3"/>
-    <a href="#st-panel-3">Input</a>
+    <a href="#st-panel-3">PCA</a>
     <input type="radio" name="radio-set" id="st-control-4"/>
-    <a href="#st-panel-4">Extended</a>'
+    <a href="#st-panel-4">CA</a>'
                 ),
                 div(
                     class = "st-scroll",
-                    list(HTML(
-                    '<section class="st-panel" id="st-panel-1">
+                    list(
+                        HTML(
+                            '<section class="st-panel" id="st-panel-1">
                         <div class="st-deco" data-icon="&#xf069;"></div>
-                        <h2>OVERVIEW</h2>
-                        <p><input type="text" name="test_here" id="test_here"></p>
-                    '), tags$div(htmlOutput("test_here_output")),
-                    HTML('
-                    </section>'
-                    ))
+                        <h2>Iris Data</h2>
+                        <div class="st-content">
+                            <input type="text" name="test_here" id="test_here">
+                            <p></p>'
+                        ), tags$div(htmlOutput("test_here_output")),
+                        HTML("
+                        </div>
+                    </section>")
+                    )
                 ),
                 div(
                     class = "st-scroll",
                     HTML('<section class="st-panel st-color" id="st-panel-2">
                         <div class="st-deco" data-icon="&#xf069;"></div>
-                        <h2>Result</h2>
+                        <h2>Statics</h2>
                         <p></p>
                     </section>')
                 ),
@@ -68,7 +72,7 @@ ui <- fluidPage(
                     class = "st-scroll",
                     HTML('<section class="st-panel" id="st-panel-3">
                         <div class="st-deco" data-icon="&#xf069;"></div>
-                        <h2>Input</h2>
+                        <h2>PCA</h2>
                         <p></p>
                     </section>')
                 ),
@@ -76,7 +80,7 @@ ui <- fluidPage(
                     class = "st-scroll",
                     HTML('<section class="st-panel st-color" id="st-panel-4">
                         <div class="st-deco" data-icon="&#xf069;"></div>
-                        <h2>Extended</h2>
+                        <h2>CA</h2>
                         <p></p>
                     </section>')
                 )
