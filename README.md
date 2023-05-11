@@ -2,7 +2,7 @@
 
 #### Name: 許瀞文
 #### Student ID: 111971010
-#### ShinyApps link: [<https://yourname.shinyapps.io/NCCU_DS2023_hw4_111971010/>]
+#### ShinyApps link: [https://northhsu.shinyapps.io/nccu_ds2023_hw4_111971010/](https://northhsu.shinyapps.io/nccu_ds2023_hw4_111971010/)
 
 ## Description
 
