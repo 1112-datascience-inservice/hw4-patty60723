@@ -31,3 +31,19 @@ res_ca <- CA(log.ir, graph = FALSE)
 get_ca_row(res_ca)
 get_ca_col(res_ca)
 fviz_ca_biplot(res_ca, repel = TRUE)
+
+data(iris)
+# set.seed(1233)
+# head(iris[sample(nrow(iris), 5, replace = FALSE), ][, 1:4])
+chisq <- chisq.test(iris[, 1:4])
+chisq
+chisq$statistic
+chisq$parameter
+
+prcomp(iris[, 1:4])
+p <- PCA(iris[, 1:4], graph = FALSE)
+p$centre
+
+
+q <- prcomp(iris[, 1:4])
+ca <- CA(iris[, 1:4], graph = FALSE)

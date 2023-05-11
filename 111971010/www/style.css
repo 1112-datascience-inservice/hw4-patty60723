@@ -16,6 +16,13 @@ h4,
 h5 {
     color: #2a9d8f;
     font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#st-panel-2 h1, #st-panel-2 h2, #st-panel-2 h3, #st-panel-2 h4, #st-panel-2 h5,
+#st-panel-4 h1, #st-panel-4 h2, #st-panel-4 h3, #st-panel-4 h4, #st-panel-4 h5,
+#st-panel-2 table tr:not(:hover) td, #st-panel-4 table tr:not(:hover) td {
+    color: #fff;
 }
 
 .st-container {
@@ -228,7 +235,7 @@ h5 {
     line-height: 50px;
     margin: -70px 0 0 0;
     padding: 0;
-    top: 25%;
+    top: 35%;
     -webkit-backface-visibility: hidden;
 }
 
@@ -305,7 +312,7 @@ h5 {
 }
 
 .st-panel p,
-.st-panel div:not(.st-deco) {
+.st-panel div:not(.st-deco):not(.tooltip) {
     font-size: 16px;
     line-height: 22px;
     color: #8b8b8b;
@@ -323,13 +330,17 @@ h5 {
     height: 100%;
 }
 
-/* 
-#st-panel-1 .left-panel,
-#st-panel-1 .right-panel {
-    width: 50%;
-} */
+#st-panel-2 .right-panel, #st-panel-4 .right-panel {
+    width: 100%;
+}
 
-.right-panel div:last-of-type {
+.w50 {
+    width: 50%;
+    display: inline-block;
+}
+
+.right-panel div:last-of-type:not(.shiny-bound-output),
+.left-panel div:last-of-type:not(.shiny-bound-output) {
     padding-bottom: 50px;
 }
 
@@ -505,6 +516,22 @@ h5 {
     }
 }
 
+.text-orange {
+    color: #ff6b35!important;
+}
+
+.text-white {
+    color: #fff!important;
+}
+
+.text-green {
+    color: #2a9d8f!important;
+}
+
+.text-darkgreen {
+    color: #264653!important;
+}
+
 /** button group**/
 .button-group {
     margin: 100px auto;
@@ -513,14 +540,14 @@ h5 {
 }
 
 .button-group .button {
-    background: rgb(38 70 83 / 10%);
+    background: #264653;
     border: none;
     width: 80px;
     height: 50px;
     padding: 20px;
     display: inline-block;
     margin: -2px;
-    color: #2a9d8f;
+    color: #fff;
     font-size: 16px;
     text-align: right;
     cursor: pointer;
@@ -537,18 +564,59 @@ h5 {
 }
 
 .button-group .button:hover {
-    background: #2a9d8f;
+    background: #e9c46a;
     color: #fff;
 }
 
 .button-group .button.active {
     text-shadow: 0 0 10px rgba(181, 26, 30, 0.4);
-    background: #2a9d8f;
+    background: #ff6b35;
     color: #fff;
     transform: translate(10px, -10px);
     z-index: 100;
     box-shadow: -8px 8px 0px 2px rgba(28, 28, 28, 0.3);
     cursor: default;
+}
+
+/* refresh button */
+#random_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#random_buttons .postlink {
+    display: inline-block;
+    text-align: center;
+    border-color: #3E82E6;
+  }
+#random_buttons .postlink:hover {
+    border-color: #FFCA00;
+}
+  
+#refresh, .postlink {
+    width: 200px;
+    height: 70px;
+    margin: 10px;
+    font-size: 22px;
+    border: 3px solid #28F2B3;
+    color: white;
+    line-height: 64px;
+    background: none;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: 0 0 5px #222;
+    border-radius: 70px;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-align: center;
+}
+#refresh:hover, .postlink:hover {
+    border-color: #FFCA00;
 }
 
 /**table**/
@@ -587,3 +655,117 @@ table th {
 table th.last {
     border-right: none;
 }
+
+.st-content .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.st-content .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.st-content .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+    background: #264653!important;
+    color: #fff!important;
+    border: none!important;
+    font-weight: 500;
+}
+
+.st-content .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.st-content .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #2a9d8f!important;
+}
+
+/** slider input **/
+.slider-container {
+    width: 100%;
+    padding: 20px 0 20px 0;
+}
+
+.slider {
+    width: 100%;
+    padding: 0 40px;
+}
+.slider input {
+    background: linear-gradient(to right, #10d5c2 0%, #10d5c2 100%, #eaeefb 100%, #eaeefb 100%);
+    border-radius: 8px;
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    outline: none;
+    transition: all 450ms ease-in;
+    -webkit-appearance: none;
+}
+.slider input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: url(https://raw.githubusercontent.com/milenig/fend-mentor_pricing-component/3ccfd6b18e87377a950915288ef64c896969bf62/images/icon-slider.svg) #10d5c2 center no-repeat;
+    box-shadow: 0px 10px 20px 0px rgba(16, 213, 194, 0.7);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+.slider input::-webkit-slider-thumb:hover {
+    background: url(https://raw.githubusercontent.com/milenig/fend-mentor_pricing-component/3ccfd6b18e87377a950915288ef64c896969bf62/images/icon-slider.svg) #1be6d1 center no-repeat;
+}
+.slider input::-webkit-slider-thumb:active {
+    cursor: grabbing;
+    background: url(https://raw.githubusercontent.com/milenig/fend-mentor_pricing-component/3ccfd6b18e87377a950915288ef64c896969bf62/images/icon-slider.svg) #0dbead center no-repeat;
+}
+
+/*tooltip Box*/
+.con-tooltip {
+    position: relative;
+    border-radius: 9px;
+    padding: 0 20px;
+    margin: 10px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /*tooltip */
+  .tooltip {
+    visibility: hidden;
+    z-index: 1;
+    opacity: .40;
+    
+    width: 55px;
+    padding: 10px!important;
+    background: #333;
+    color: #fff;
+    
+    position: absolute;
+    top:-40%;
+    left: 40%;
+  
+    border-radius: 9px;
+    font: 16px;
+
+    transform: translateY(9px);
+    transition: all 0.3s ease-in-out;
+    
+    box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
+    text-align: center;
+  }
+  
+  .con-tooltip:hover .tooltip{
+    visibility: visible;
+    transform: translateY(20px);
+    opacity: 1;
+    transition: .3s linear;
+    animation: odsoky 1s ease-in-out infinite  alternate;
+  
+  }
+  @keyframes odsoky {
+    0%{
+      transform: translateY(6px);	
+    }
+  
+    100%{
+      transform: translateY(1px);	
+    }
+  
+  }
+
+/*hover ToolTip*/
+.bottom:hover {transform: translateY(6px);}
+
+/*bottom*/
+.bottom .tooltip { top:115%; left: 40%; }
