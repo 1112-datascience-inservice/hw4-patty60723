@@ -4,7 +4,7 @@ library(htmlwidgets)
 
 # [layout reference](https://codepen.io/dodozhang21/pen/kMoXZz)
 ui <- fluidPage(
-    titlePanel("PCA of Iris data"),
+    titlePanel("NCCU_DS2023_hw4_111971010: PCA of Iris data"),
     tags$head(
         list(
             tags$link(
